@@ -83,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.setTitle("FCM Message");
         alert.show();
-
     }
     @Override
     protected void onDestroy() {
