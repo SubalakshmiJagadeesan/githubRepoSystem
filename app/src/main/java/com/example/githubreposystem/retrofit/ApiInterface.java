@@ -10,7 +10,7 @@ import retrofit2.http.GET;
 
 public interface ApiInterface {
 
-    String BASE_URL = "https://api.github.com/";
+
 
     @GET("repositories")
     Call<List<Repository>> getRepositories();

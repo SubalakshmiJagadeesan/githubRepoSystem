@@ -1,5 +1,6 @@
 package com.example.githubreposystem.retrofit;
 
+import com.example.githubreposystem.Constants;
 import com.google.gson.GsonBuilder;
 
 import retrofit2.Retrofit;
@@ -9,8 +10,10 @@ public class RetrofitClient {
     private static RetrofitClient instance = null;
     private ApiInterface myApi;
 
+
     private RetrofitClient() {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl(ApiInterface.BASE_URL)
+
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(Constants.ApiConstants.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create( new GsonBuilder()
                         .create()))
                 .build();
