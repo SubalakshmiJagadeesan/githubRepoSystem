@@ -34,6 +34,7 @@ public class DashboardFragment extends Fragment implements RVAdapterInterface {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         dashboardViewModel =
                 ViewModelProviders.of(this).get(DashboardViewModel.class);
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
@@ -41,6 +42,8 @@ public class DashboardFragment extends Fragment implements RVAdapterInterface {
         tvNoItem = root.findViewById(R.id.tv_placeholder);
         progressBar = root.findViewById(R.id.progressBar);
         rvRepos.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        dashboardViewModel.fetchRepositoriesFromVolley(getContext());
 
         dashboardViewModel.getRepositories().observe(getViewLifecycleOwner(), new Observer<List<Repository>>() {
             @Override
